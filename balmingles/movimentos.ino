@@ -1,0 +1,223 @@
+#define speed 100
+#define ajusteA 15
+#define ajusteB 8
+#define ajusteC 5
+#define ajusteD 1
+
+
+
+//Parar
+void stop(){
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+}
+
+//Frente
+void foward() {
+
+  digitalWrite(FontRightWheel_Foward, HIGH);   
+  digitalWrite(FrontRightWheel_Backwards, LOW);   
+  digitalWrite(FrontLeftWheel_Backwards, LOW);
+  digitalWrite(FrontLeftwheel_Foward, HIGH);
+  digitalWrite(BackRightWheel_Foward, HIGH);   
+  digitalWrite(BackRightWheel_Backwards, LOW);
+  digitalWrite(BackLeftWheel_Backwards, LOW);
+  digitalWrite(BackLeftWheel_Foward, HIGH); 
+
+  analogWrite(ENA, speed + propA);
+  analogWrite(ENB, speed + propB);
+  analogWrite(ENC, speed + propC);
+  analogWrite(END, speed + propD);  
+}
+//Trás
+void backwards() {
+  digitalWrite(FontRightWheel_Foward, LOW);   
+  digitalWrite(FrontRightWheel_Backwards,HIGH );   
+  digitalWrite(FrontLeftwheel_Foward, LOW);   
+  digitalWrite(FrontLeftWheel_Backwards, HIGH);   
+  digitalWrite(BackRightWheel_Foward, LOW);   
+  digitalWrite(BackRightWheel_Backwards, HIGH);   
+  digitalWrite(BackLeftWheel_Foward, LOW);   
+  digitalWrite(BackLeftWheel_Backwards, HIGH);   
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+}
+
+//Lados
+void RightTurning() {
+  digitalWrite(FontRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+}
+
+void LeftTurning() {
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+}
+
+//Lados diagonal
+void LeftDiagonal(){
+  digitalWrite(FontRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+
+}
+
+void RightDiagonal(){
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+
+}
+// giro 360 rápido
+void LeftSpinningFast(){
+  digitalWrite(FontRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+  
+}
+
+void RightSpinningFast(){
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+  
+}
+// giro 360 lento
+void LeftSpinningSlow(){
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+  
+}
+
+void RightSpinningSlow(){
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);
+}
+
+// caranguejo
+void LeftCrabWalk(){
+  digitalWrite(FontRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftwheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed);
+  analogWrite(ENA, speed + ajusteB);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed + ajusteD);
+}
+
+void RightCrabWalk(){
+  digitalWrite(FontRightWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontRightWheel_Backwards, HIGH);   // turn the LED off by making the voltage HIGH
+  digitalWrite(FrontLeftwheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(FrontLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
+
+  analogWrite(ENB, speed + ajusteB);
+  analogWrite(ENA, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed + ajusteD);
+
+}
