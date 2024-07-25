@@ -1,40 +1,21 @@
- /*void teste_movimentos(){
-   foward();
-   delay(1000);
-   backwards();
-   delay(1000);
-   LeftDiagonal();
-   delay(1000);
-   RightDiagonal();
-   delay(1000);
- }*/
-
-// void CrabWalk(){
-//   foward();
-//   delay(1000);
-//   LeftCrabWalk();
-//   delay(1000);
-//   backwards();
-//   delay(1000);
-//   RightCrabWalk();
-// }
-
- void mostrarSensores(){
-   Serial.print(sleft);
-   Serial.print(" - ");
-   Serial.print(scenterleft);
+  void mostrarSensores(){
+   Serial.print(sright);
    Serial.print(" - ");
    Serial.print(scenterright);
    Serial.print(" - ");
-   Serial.println(sright);
+   Serial.print(scenterleft);
+   Serial.print(" - ");
+   Serial.println(sleft);
  }
    void lerSensores(){
-   sleft = analogRead(sensorE);
-   delay(10);
-   scenterleft = analogRead(sensorCE);
-   delay(10);
-   scenterright  = analogRead(sensorCD);
-   delay(10);
-   sright = analogRead(sensorD);
-   delay(10);
+   sright = digitalRead(sensorR);
+   delay (10);
+   scenterright = analogRead(sensorCR);
+   delay (10);
+   scenterleft  = analogRead(sensorCL);
+   delay (10);
+   sleft = digitalRead(sensorL);
+  delay (10);
  }
+
+  

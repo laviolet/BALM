@@ -13,22 +13,16 @@
 #define END 9 //tras direito (ENA) 
 
 // definição dos sensores
-#define sensorD A2 // roxo
-#define sensorCD A1 // azul 
-#define sensorCE A3 // cinza
-#define sensorE A0 // verde
+#define sensorR 36 // verde
+#define sensorCR A2 // azul
+#define sensorCL A1 // amarelo
+#define sensorL 38 // roxo
 // the setup function runs once when you press reset or power the board
 
-int sleft, scenterleft, scenterright, sright;
- int white = 200;
- int black = 850;
-
-
-int propA = 0;
-int propB = 0;
-int propC = 0;
-int propD = 0;
-
+ int sright, sleft;
+ int scenterright, scenterleft;     
+ int white = 100;
+ int black = 350;
 
 
 void setup() {
@@ -48,23 +42,35 @@ void setup() {
   pinMode(ENC, OUTPUT);
   pinMode(END, OUTPUT);
 
-  pinMode(sensorD, INPUT);
-  pinMode(sensorCD, INPUT);
-  pinMode(sensorCE, INPUT);
-  pinMode(sensorE, INPUT);
+  pinMode(sensorR, INPUT);
+  pinMode(sensorCR, INPUT);
+  pinMode(sensorCL, INPUT);
+  pinMode(sensorL, INPUT);
   
 }
 
-void loop() {
-  linha();
+void loop() { 
+  /*linha();
   lerSensores();
- mostrarSensores();
-    
-delay(500);
-}
- /*
- void loop() {
-// lerSensores();
-// mostrarSensores();*/
+  mostrarSensores();*/
+
+  foward();
+  delay(1000);
+  RightTurning();
+  delay(1000);
+  LeftTurning();
+  delay(1000);
+  backwards();
+  delay(1000);
+  RightSpinningFast();
+  delay(1000);
+  LeftSpinningFast();
+  delay(1000);
+  foward();
+  delay(1000);
+  RightCrabWalk();
+  delay(1000);
+  LeftCrabWalk();
+  }
 // HIGH + HIGH = quando os dois forem pretos o robo continua a andar 
 // LOW + LOW = quando os dois forem brancos o robo continua a andar 

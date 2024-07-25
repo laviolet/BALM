@@ -1,10 +1,8 @@
-#define speed 100
+#define speed 200
 #define ajusteA 15
 #define ajusteB 8
 #define ajusteC 5
 #define ajusteD 1
-
-
 
 //Parar
 void stop(){
@@ -31,11 +29,12 @@ void foward() {
   digitalWrite(BackLeftWheel_Backwards, LOW);
   digitalWrite(BackLeftWheel_Foward, HIGH); 
 
-  analogWrite(ENA, speed + propA);
-  analogWrite(ENB, speed + propB);
-  analogWrite(ENC, speed + propC);
-  analogWrite(END, speed + propD);  
+  analogWrite(ENA, speed);
+  analogWrite(ENB, speed);
+  analogWrite(ENC, speed);
+  analogWrite(END, speed);  
 }
+
 //Trás
 void backwards() {
   digitalWrite(FontRightWheel_Foward, LOW);   
@@ -47,8 +46,8 @@ void backwards() {
   digitalWrite(BackLeftWheel_Foward, LOW);   
   digitalWrite(BackLeftWheel_Backwards, HIGH);   
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
 }
@@ -61,11 +60,11 @@ void RightTurning() {
   digitalWrite(FrontLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
   digitalWrite(BackRightWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
   digitalWrite(BackRightWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
-  digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
+  digitalWrite(BackLeftWheel_Foward, LOW);   // tur   n the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
 }
@@ -80,8 +79,8 @@ void LeftTurning() {
   digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
 }
@@ -97,8 +96,8 @@ void LeftDiagonal(){
   digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
 
@@ -114,8 +113,8 @@ void RightDiagonal(){
   digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
 
@@ -131,8 +130,8 @@ void LeftSpinningFast(){
   digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
   
@@ -148,8 +147,8 @@ void RightSpinningFast(){
   digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
   
@@ -165,8 +164,8 @@ void LeftSpinningSlow(){
   digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
   
@@ -182,8 +181,8 @@ void RightSpinningSlow(){
   digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed);
 }
@@ -199,8 +198,8 @@ void LeftCrabWalk(){
   digitalWrite(BackLeftWheel_Foward, HIGH);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, LOW);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed);
   analogWrite(ENA, speed + ajusteB);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed + ajusteD);
 }
@@ -215,8 +214,8 @@ void RightCrabWalk(){
   digitalWrite(BackLeftWheel_Foward, LOW);   // turn the LED off by making the voltage LOW
   digitalWrite(BackLeftWheel_Backwards, HIGH);   // turn the LED off by making the voltage LOW
 
-  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENA, speed);
+  analogWrite(ENB, speed + ajusteB);
   analogWrite(ENC, speed);
   analogWrite(END, speed + ajusteD);
 
